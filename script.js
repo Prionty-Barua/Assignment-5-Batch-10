@@ -21,7 +21,7 @@ function donate(cardNumber) {
 
   // Add to history
   const date = new Date();
-  history.push(`Donated $${donationAmount} on ${date.toLocaleString()}`);
+  history.push(`Donated ${donationAmount}BDT on ${date.toLocaleString()} `);
   updateHistory();
 
   // Show success modal

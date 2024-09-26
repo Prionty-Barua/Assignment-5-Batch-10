@@ -7,7 +7,7 @@
     <title>Assignment 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet">
-    
+
     <style>
         .modal-open {
             display: block;
@@ -20,25 +20,28 @@
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <nav class="sticky top-0 bg-rose-50 p-4 lg:px-32">
-        <div class="flex justify-between items-center">
-            <a href="blog.html" class="text-black font-bold btn bg-lime-500 border-none">Blog</a>
-            <div class="font-bold text-2xl mx-auto flex gap-3">
-                <img src="assets/logo.png" class="w-8" alt="">
-                Donate Bangladesh
-            </div>
-            <div class="flex font-bold text-xl items-center space-x-2">
-                <img src="assets/coin.png" alt="">
-                <span id="account-balance">5000 BDT</span>
+    <!-- Navbar lg:px-32-->
+    <nav class="sticky top-0">
+        <div class="bg-gray-50 backdrop-blur-md p-2 px-28">
+            <div class="flex justify-between items-center">
+                <a href="blog.html" class="text-black font-bold btn bg-lime-500 border-none">Blog</a>
+                <div class="font-bold text-2xl mx-auto flex gap-3">
+                    <img src="assets/logo.png" class="w-8" alt="">
+                    Donate Bangladesh
+                </div>
+                <div class="flex font-bold text-xl items-center space-x-2">
+                    <img src="assets/coin.png" alt="">
+                    <span id="account-balance">5000 BDT</span>
+                </div>
             </div>
         </div>
+        <div class="sticky flex justify-center space-x-4 mt-2">
+            <button id="donation-button"
+                class="text-black font-bold btn bg-lime-500 border-none active">Donation</button>
+            <button id="history-button"
+                class="text-black font-bold btn btn-outline hover:bg-lime-500 border-none">History</button>
+        </div>
     </nav>
-    <div class="sticky flex justify-center space-x-4 mt-2">
-        <button id="donation-button" class="text-black font-bold btn bg-lime-500 border-none active">Donation</button>
-        <button id="history-button" class="text-black font-bold btn btn-outline hover:bg-lime-500 border-none">History</button>
-    </div>
 
     <!-- Donation Cards -->
     <div id="donation-section" class="p-4 px-32">
@@ -49,7 +52,7 @@
                 <div class="card-body w-[35%]">
                     <div class="flex text-xl gap-2">
                         <img src="assets/coin.png" alt="">
-                        <span id="donation-amount-1">0  BDT</span>
+                        <span id="donation-amount-1">0 BDT</span>
                     </div>
                     <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
                     <p> The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
@@ -58,7 +61,8 @@
                         and making a positive impact on the lives of those in need.</p>
                     <input type="number" id="donation-input-1" class="input input-bordered mt-2"
                         placeholder="Write Donation Amount">
-                    <button onclick="donate(1)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate Now</button>
+                    <button onclick="donate(1)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate
+                        Now</button>
                 </div>
             </div>
             <!-- Card 2 -->
@@ -67,7 +71,7 @@
                 <div class="card-body w-[45%]">
                     <div class="flex text-xl gap-2">
                         <img src="assets/coin.png" alt="">
-                        <span id="donation-amount-2">600  BDT</span>
+                        <span id="donation-amount-2">600 BDT</span>
                     </div>
                     <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
                     <p>The recent floods in Feni have devastated local communities, leading to severe disruption and
@@ -77,7 +81,8 @@
                         real difference. Please consider donating today to assist those in urgent need.</p>
                     <input type="number" id="donation-input-2" class="input input-bordered mt-2"
                         placeholder="Write Donation Amount">
-                    <button onclick="donate(2)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate Now</button>
+                    <button onclick="donate(2)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate
+                        Now</button>
                 </div>
             </div>
             <!-- Card 3 -->
@@ -86,7 +91,7 @@
                 <div class="card-body w-[35%]">
                     <div class="flex text-xl gap-2">
                         <img src="assets/coin.png" alt="">
-                        <span id="donation-amount-3">2400  BDT</span>
+                        <span id="donation-amount-3">2400 BDT</span>
                     </div>
                     <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
                     <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many
@@ -97,7 +102,8 @@
                         donation to support these brave individuals in their time of need.</p>
                     <input type="number" id="donation-input-3" class="input input-bordered mt-2"
                         placeholder="Write Donation Amount">
-                    <button onclick="donate(3)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate Now</button>
+                    <button onclick="donate(3)" class="text-black font-bold btn bg-lime-500 border-none mt-2">Donate
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -106,22 +112,19 @@
     <!-- History Section -->
     <div id="history-section" class="hidden p-4">
         <h2 class="text-2xl font-bold mb-4">Donation History</h2>
-        <ul id="history-list" class="list-disc pl-5">
-            <!-- History will be appended here -->
-        </ul>
+        <ul id="history-list" class="list-disc pl-5"></ul>
     </div>
 
     <!-- Success Modal -->
-    <div id="success-modal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <h2 class="font-bold text-xl">Success!</h2>
-            <p>Your donation has been successfully recorded.</p>
-            <button onclick="closeModal()" class="btn btn-primary mt-4">Close</button>
+    <div id="successModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-8 rounded shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Donation Successful!</h2>
+            <p>Thank you for your generous donation.</p>
+            <button id="closeModal" class="mt-4 bg-blue-500 text-white p-2 rounded">Close</button>
         </div>
     </div>
 
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
