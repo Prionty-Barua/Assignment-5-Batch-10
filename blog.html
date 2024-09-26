@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.2/dist/full.css" rel="stylesheet">
+    
+</head>
+<body>
+
+       <!-- Navbar -->
+       <nav class="sticky top-0 bg-rose-50 p-4 px-32">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-black font-bold btn bg-lime-500 border-none">Home</a>
+            <div class="font-bold text-2xl mx-auto flex gap-3">
+                <img src="assets/logo.png" class="w-8" alt="">
+                Donate Bangladesh
+            </div>
+            <div class="flex font-bold text-xl items-center space-x-2">
+                <img src="assets/coin.png" alt="">
+                <span id="account-balance">5000 BDT</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="p-4 mt-10 px-32">
+        <h1 class="text-4xl font-bold mb-4">Important FQA</h1>
+        <div class="collapse collapse-arrow">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title text-lg font-bold bg-gray-100 text-black">
+                What is the Document Object Model (DOM)?
+            </div>
+            <div class="collapse-content">
+                <p>The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title text-lg font-bold bg-gray-100 text-black">
+                How do you select an element from the DOM?
+            </div>
+            <div class="collapse-content">
+                <p>You can select elements using methods like document.getElementById, document.getElementsByClassName, and document.querySelector.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title text-lg font-bold bg-gray-100 text-black">
+                What is event delegation in the context of the DOM, and why is it useful?
+            </div>
+            <div class="collapse-content">
+                <p>Event delegation is a technique that allows you to attach a single event listener to a parent element, which can manage events for multiple child elements. It’s useful for performance and dynamic content.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title text-lg font-bold bg-gray-100 text-black">
+                How do you manipulate an element's attributes and styles using the DOM?
+            </div>
+            <div class="collapse-content">
+                <p>You can manipulate an element's attributes using methods like setAttribute and getAttribute. For styles, you can modify the style property directly or use classList to add or remove classes.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

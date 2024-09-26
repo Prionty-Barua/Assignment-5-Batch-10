@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+
+  <!-- Navbar -->
+ <!-- Navbar -->
+ <nav class="sticky top-0 bg-rose-50 p-4 px-32">
+  <div class="flex justify-between items-center text-black">
+      <a href="index.html" class="text-black font-bold btn bg-lime-500 border-none">Home</a>
+      <div class="font-bold text-2xl mx-auto flex gap-3">
+          <img src="assets/logo.png" class="w-8" alt="">
+          Donate Bangladesh
+      </div>
+      <div class="flex font-bold text-xl items-center space-x-2">
+          <img src="assets/coin.png" alt="">
+          <span id="account-balance">1000</span>
+      </div>
+  </div>
+</nav>
+
+  <!-- History Section -->
+  <section class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+    <div id="historyList" class="bg-white p-4 rounded-lg shadow-lg"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
